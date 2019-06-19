@@ -9,7 +9,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text=='Link')
 	{
-		$bot->sendTextMessage($recipientId, "www.google.it");
+		$bot->sendLinkMessage($recipientId, "www.google.it");
 	}
 	elseif($message->attachments)
 	{
