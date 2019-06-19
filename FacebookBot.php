@@ -99,16 +99,21 @@ class FacebookBot
         "template_type"=>"generic",
         "elements"=>[
           [
-            "title"=>"Questo è il titolo",
-            "item_url"=>$url,
+            "title"=>"Welcome to Peter\'s Hats",
+            "item_url"=>"https://www.cloudways.com/blog/migrate-symfony-from-cpanel-to-cloud-hosting/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"Questo è il sottotitolo",
+            "subtitle"=>"We\'ve got the right hat for everyone.",
             "buttons"=>[
               [
                 "type"=>"web_url",
-                "url"=>"$url",
+                "url"=>"https://petersfancybrownhats.com",
                 "title"=>"View Website"
-              ]                
+              ],
+              [
+                "type"=>"postback",
+                "title"=>"Start Chatting",
+                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
+              ]              
             ]
           ]
         ]
