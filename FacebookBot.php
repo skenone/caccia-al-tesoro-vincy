@@ -100,13 +100,13 @@ class FacebookBot
         "elements"=>[
           [
             "title"=>"Welcome to Peter\'s Hats",
-            "item_url"=>"https://www.cloudways.com/blog/migrate-symfony-from-cpanel-to-cloud-hosting/",
+            "item_url"=>"https://www.google.it/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
             "subtitle"=>"We\'ve got the right hat for everyone.",
             "buttons"=>[
               [
                 "type"=>"web_url",
-                "url"=>"https://petersfancybrownhats.com",
+                "url"=>"https://www.google.it/",
                 "title"=>"View Website"
               ],
               [
