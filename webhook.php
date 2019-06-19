@@ -10,6 +10,9 @@ foreach ($messages as $message)
 	if($message->text=='Link')
 	{
 		$bot->sendLinkMessage($recipientId, "www.google.it");
+	}elseif($message->text=='Typing')
+	{
+		$bot->sendTyping($recipientId);
 	}
 	elseif($message->text=='Image')
 	{
