@@ -15,6 +15,11 @@ foreach ($messages as $message)
 	{
 		$bot->sendImageMessage($recipientId, "http://www.like-agency.it/media/k2/items/cache/d6086de322f98f66cc694f32ea284557_L.jpg");
 	}
+	elseif($message->text=='Image2')
+	{
+		$bot->sendImageMessage($recipientId, "http://www.like-agency.it/media/k2/items/cache/d6086de322f98f66cc694f32ea284557_L.jpg");
+		$bot->sendImageMessage($recipientId, "https://upload.wikimedia.org/wikipedia/it/5/51/Immagine_13.png");
+	}
 	elseif($message->attachments)
 	{
 		$bot->sendTextMessage($recipientId, "Attachment received");
