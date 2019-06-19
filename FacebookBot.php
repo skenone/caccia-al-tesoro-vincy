@@ -47,7 +47,7 @@ class FacebookBot
         return false;
     }
     
-    public function sendImageMessage($recipientId, $text)
+    public function sendImageMessage($recipientId, $urlImage)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
@@ -57,7 +57,7 @@ class FacebookBot
         $answer = ["attachment"=>[
       "type"=>"image",
       "payload"=>[
-        "url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
+        "url"=>$urlImage,
         "is_reusable"=>true
       ]
     ]];
@@ -70,7 +70,7 @@ class FacebookBot
         }
         return false;
     }
-    public function sendLinkMessage($recipientId, $text)
+    public function sendLinkMessage($recipientId, $url)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
