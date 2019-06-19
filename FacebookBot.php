@@ -64,8 +64,7 @@ class FacebookBot
         $answer = ["attachment"=>[
                         "type"=>"image",
                         "payload"=>[
-                            "url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-                            "is_reusable"=true
+                            "url"=>"http://www.messenger-rocks.com/image.jpg"                          
                             ]
                         ]
                   ];
