@@ -55,6 +55,41 @@ class FacebookBot
         }
         return false;
     }
+    
+    public function sendLinkMessage($recipientId, $text)
+    {
+        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = sprintf($url, $this->getPageAccessToken());
+        
+        
+        $parameters = '{
+  "recipient":{
+    "id":"'+$recipientId+'"
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://www.messenger.com",
+            "title":"Visit Messenger"
+          }
+        ]
+      }
+    }
+  }
+}';
+        $response = self::executePost($url, $parameters, false);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
+        }
+        return false;
+    }
 
     public function setWelcomeMessage($pageId, $text)
     {
