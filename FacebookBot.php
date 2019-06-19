@@ -65,7 +65,7 @@ class FacebookBot
                         "type"=>"image",
                         "payload"=>[
                             "url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-                            "is_reusable"=true;
+                            "is_reusable"=true
                             ]
                         ]
                   ];
