@@ -17,3 +17,4 @@ foreach ($messages as $message)
 		$bot->sendTextMessage($recipientId, "Attachment received");
 	}
 }
+?>
