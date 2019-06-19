@@ -1,36 +1,28 @@
 <?php
-
 class FacebookBot
 {
-
     const BASE_URL = 'https://graph.facebook.com/v2.6/';
-
     private $_validationToken;
     private $_pageAccessToken;
     private $_receivedMessages;
-
     public function __construct($validationToken, $pageAccessToken)
     {
         $this->_validationToken = $validationToken;
         $this->_pageAccessToken = $pageAccessToken;
         $this->setupWebhook();
     }
-
     public function getReceivedMessages()
     {
         return $this->_receivedMessages;
     }
-
     public function getPageAccessToken()
     {
         return $this->_pageAccessToken;
     }
-
     public function getValidationToken()
     {
         return $this->_validationToken;
     }
-
     private function setupWebhook()
     {
         if (isset($_REQUEST['hub_challenge']) && isset($_REQUEST['hub_verify_token']) && $this->getValidationToken() == $_REQUEST['hub_verify_token']) {
@@ -38,7 +30,6 @@ class FacebookBot
             exit;
         }
     }
-
     public function sendTextMessage($recipientId, $text)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
@@ -98,7 +89,6 @@ class FacebookBot
         }
         return false;
     }
-
     public function setWelcomeMessage($pageId, $text)
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
@@ -115,7 +105,6 @@ class FacebookBot
         }
         return false;
     }
-
     public function run()
     {
         $request = self::getJsonRequest();
@@ -141,7 +130,6 @@ class FacebookBot
         }
         $this->_receivedMessages = $messages;
     }
-
     public function subscribeAppToThePage()
     {
         $url = self::BASE_URL . "me/subscribed_apps";
@@ -153,13 +141,11 @@ class FacebookBot
         }
         return false;
     }
-
     private static function getJsonRequest()
     {
         $content = file_get_contents("php://input");
         return json_decode($content, false, 512, JSON_BIGINT_AS_STRING);
     }
-
     private static function executePost($url, $parameters, $json = false)
     {
         $ch = curl_init();
