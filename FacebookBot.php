@@ -30,6 +30,22 @@ class FacebookBot
             exit;
         }
     }
+    public function sendTyping($recipientId)
+    {
+        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = sprintf($url, $this->getPageAccessToken());
+        $recipient = new \stdClass();
+        $recipient->id = $recipientId;
+        $sender_action="typing_on";
+        $parameters = ['recipient' => $recipient, 'sender_action' => $sender_action];
+        $response = self::executePost($url, $parameters, true);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
+        }
+        return false;
+    }
+    
     public function sendTextMessage($recipientId, $text)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
