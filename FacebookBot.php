@@ -47,6 +47,38 @@ class FacebookBot
         return false;
     }
     
+    public function sendImageMessage($recipientId, $text)
+    {
+        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = sprintf($url, $this->getPageAccessToken());
+        $recipient = new \stdClass();
+        $recipient->id = $recipientId;
+        
+        $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"generic",
+        "elements"=>[
+          [
+            "title"=>"Welcome to Peter\'s Hats",
+            "item_url"=>"https://www.cloudways.com/blog/migrate-symfony-from-cpanel-to-cloud-hosting/",
+            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
+            "subtitle"=>"We\'ve got the right hat for everyone.",
+            "buttons"=>[      
+            ]
+          ]
+        ]
+      ]
+    ]];
+        $message= $answer;
+        $parameters = ['recipient' => $recipient, 'message' => $message];    
+        $response = self::executePost($url, $parameters, true);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
+        }
+        return false;
+    }
     public function sendLinkMessage($recipientId, $text)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
