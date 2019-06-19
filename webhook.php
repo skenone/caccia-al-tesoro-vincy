@@ -11,6 +11,10 @@ foreach ($messages as $message)
 	{
 		$bot->sendLinkMessage($recipientId, "www.google.it");
 	}
+	elseif($message->text=='Image')
+	{
+		$bot->sendImageMessage($recipientId, "www.google.it");
+	}
 	elseif($message->attachments)
 	{
 		$bot->sendTextMessage($recipientId, "Attachment received");
@@ -19,4 +23,6 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId, $message->text);
 	}
+	
+	
 }
