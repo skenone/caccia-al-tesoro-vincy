@@ -10,7 +10,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text=='Link')
 	{
-		$bot->sendLinkMessage($recipientId, "https:\\www.google.it");
+		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}elseif($message->text=='Typing')
 	{
 		$bot->sendTyping($recipientId);
