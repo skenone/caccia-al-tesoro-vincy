@@ -7,16 +7,16 @@ $messages = $bot->getReceivedMessages();
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
-	if($message->text)
+	if($message->text=='Link')
 	{
-		$bot->sendTextMessage($recipientId, $message->text);
+		$bot->sendTextMessage($recipientId, "www.google.it");
 	}
 	elseif($message->attachments)
 	{
 		$bot->sendTextMessage($recipientId, "Attachment received");
 	}
-	elseif($message->text=='Link')
+	elseif($message->text)
 	{
-		$bot->sendTextMessage($recipientId, "www.google.it");
+		$bot->sendTextMessage($recipientId, $message->text);
 	}
 }
