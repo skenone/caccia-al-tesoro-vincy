@@ -13,7 +13,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->text=='Image')
 	{
-		$bot->sendImageMessage($recipientId, "www.google.it");
+		$bot->sendImageMessage($recipientId, "http://www.like-agency.it/media/k2/items/cache/d6086de322f98f66cc694f32ea284557_L.jpg");
 	}
 	elseif($message->attachments)
 	{
