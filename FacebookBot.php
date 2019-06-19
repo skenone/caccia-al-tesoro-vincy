@@ -106,20 +106,9 @@ class FacebookBot
             "buttons"=>[
               [
                 "type"=>"web_url",
-                "url"=>"https://petersfancybrownhats.com",
+                "url"=>"$url",
                 "title"=>"View Website"
-              ],
-              [
-                "type"=>"postback",
-                "title"=>"Start Chatting",
-                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
-              ],
-              [
-                "type"=>"postback",
-                "title"=>"Start Chatting",
-                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
-              ] 
-                
+              ]                
             ]
           ]
         ]
