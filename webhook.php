@@ -15,8 +15,4 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId, "Attachment received");
 	}
-	elseif($message->text=='Link')
-	{
-		$bot->sendTextMessage($recipientId, "http:\\www.google.it\");
-	}
 }
