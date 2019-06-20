@@ -3,10 +3,10 @@
 require_once 'config.php';
 require_once 'FacebookBot.php';
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
-
-$bot->run();
-$messages = $bot->getReceivedMessages();
 $updated = $bot->setWelcomeMessage(FACEBOOK_PAGE_ID, "Ciao Umano!");
+/*$bot->run();
+$messages = $bot->getReceivedMessages();
+
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
@@ -36,3 +36,4 @@ foreach ($messages as $message)
 	}
 }
 
+*/
