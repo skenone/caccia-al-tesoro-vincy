@@ -151,7 +151,7 @@ class FacebookBot
         $request = ["setting_type"="call_to_actions",
                     "thread_state"="new_thread",
                     "call_to_actions"=>[
-                      "payload"="Ciao!"
+                      ["payload"="Ciao!"]
                         ]
                     ];
         $response = self::executePost($url, $request, true);
