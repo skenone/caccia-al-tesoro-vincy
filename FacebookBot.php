@@ -108,12 +108,12 @@ class FacebookBot
                 "type"=>"web_url",
                 "url"=>"https://www.google.it/",
                 "title"=>"View Website"
-              ],
+              ]/*,
               [
                 "type"=>"postback",
                 "title"=>"Start Chatting",
                 "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
-              ]              
+              ]  */            
             ]
           ]
         ]
