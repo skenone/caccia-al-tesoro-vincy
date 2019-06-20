@@ -8,6 +8,7 @@ $updated = $bot->setWelcomeMessage(FACEBOOK_PAGE_ID, "Greetings! The humans who 
 if($updated)
 {
 	echo "Welcome Message updated succesfully!";
+	$bot->sendTextMessage($recipientId, "Ciao");
 }
 else 
 {
