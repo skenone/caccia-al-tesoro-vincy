@@ -134,7 +134,9 @@ class FacebookBot
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
         $request = new \stdClass();
         $get_started = new \stdClass();
-        $get_started->payload = "Ciao!";
+        $get_started=>[
+            "payload" => "Ciao!"
+        ];
         $request->get_started = $get_started;
         $response = self::executePost($url, $request, true);
         if ($response) {
