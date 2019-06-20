@@ -128,8 +128,6 @@ class FacebookBot
         }
         return false;
     }
-   
-    
     public function setWelcomeMessage($pageId, $text)
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
