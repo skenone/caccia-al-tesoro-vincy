@@ -32,6 +32,4 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId, $message->text);
 	}
-	
-	
 }
