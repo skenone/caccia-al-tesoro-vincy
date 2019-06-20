@@ -151,8 +151,11 @@ class FacebookBot
         $request = new \stdClass();
         $request->setting_type = "call_to_actions";
         $request->thread_state = "new_thread";
-        $call_to_actions = new stdClass();
-        $call_to_actions->payload = $text;
+        $call_to_actions = =>[
+              [
+                "payload" = $text
+              ]
+            ];
         $request->call_to_actions = $call_to_actions;
         $response = self::executePost($url, $request, true);
         if ($response) {
