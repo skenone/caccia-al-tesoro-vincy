@@ -133,7 +133,6 @@ class FacebookBot
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
         $request = new \stdClass();
-        $get_started = new \stdClass();
         $get_started=>[
             "payload" => "Ciao!"
         ];
