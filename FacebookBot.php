@@ -128,22 +128,7 @@ class FacebookBot
         }
         return false;
     }
-    public function get_started($pageId)
-    {
-        $url = self::BASE_URL . "%s/messenger_profile?access_token=%s";
-        $url = sprintf($url, $pageId, $this->getPageAccessToken());
-        $request = new \stdClass();
-        $get_started=>[
-            "payload" => "Ciao!"
-        ];
-        $request->get_started = $get_started;
-        $response = self::executePost($url, $request, true);
-        if ($response) {
-            $responseObject = json_decode($response);
-            return is_object($responseObject) && isset($responseObject->result) && strpos($responseObject->result, 'Success') !== false;
-        }
-        return false;
-    }
+   
     
     public function setWelcomeMessage($pageId, $text)
     {
