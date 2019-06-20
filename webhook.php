@@ -4,8 +4,8 @@ require_once 'config.php';
 require_once 'FacebookBot.php';
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 $bot->run();
-$bot->sendTextMessage($recipientId, "Attachment received");
 $messages = $bot->getReceivedMessages();
+$bot->sendTextMessage($recipientId, "Attachment received");
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
