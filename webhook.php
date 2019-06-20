@@ -2,7 +2,6 @@
 require_once 'config.php';
 require_once 'FacebookBot.php';
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
-$updated = $bot->setWelcomeMessage(FACEBOOK_PAGE_ID, "Greetings! The humans who invented me programmed me to tell you about...");
 $bot->run();
 $messages = $bot->getReceivedMessages();
 $bot->sendTyping($recipientId);
