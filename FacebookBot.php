@@ -130,11 +130,10 @@ class FacebookBot
     }
     public function get_started($pageId)
     {
-        $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
+        $url = self::BASE_URL . "%s/messenger_profile?access_token=%s";
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
         $request = new \stdClass();
-        $request->setting_type = "get_started";
-        $get_started = new stdClass();
+        $get_started = new \stdClass();
         $get_started->payload = "Ciao!";
         $request->get_started = $get_started;
         $response = self::executePost($url, $request, true);
