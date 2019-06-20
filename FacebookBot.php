@@ -144,6 +144,23 @@ class FacebookBot
         }
         return false;
     }
+    public function setHelloMessage($pageId, $text)
+    {
+        $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
+        $url = sprintf($url, $pageId, $this->getPageAccessToken());
+        $request = new \stdClass();
+        $request->setting_type = "call_to_actions";
+        $request->thread_state = "new_thread";
+        $call_to_actions = new stdClass();
+        $call_to_actions->payload = $text;
+        $request->call_to_actions = $call_to_actions;
+        $response = self::executePost($url, $request, true);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->result) && strpos($responseObject->result, 'Success') !== false;
+        }
+        return false;
+    }
     public function run()
     {
         $request = self::getJsonRequest();
