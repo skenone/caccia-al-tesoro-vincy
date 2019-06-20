@@ -148,15 +148,12 @@ class FacebookBot
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
-        $request = new \stdClass();
-        $request->setting_type = "call_to_actions";
-        $request->thread_state = "new_thread";
-        $call_to_actions = =>[
-              [
-                "payload" = $text
-              ]
-            ];
-        $request->call_to_actions = $call_to_actions;
+        $request = ["setting_type"="call_to_actions",
+                    "thread_state"="new_thread",
+                    "call_to_actions"=>[
+                      "payload"="Ciao!"
+                        ]
+                    ];
         $response = self::executePost($url, $request, true);
         if ($response) {
             $responseObject = json_decode($response);
