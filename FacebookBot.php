@@ -128,25 +128,6 @@ class FacebookBot
         }
         return false;
     }
-    public function FirstHandShake($pageId)
-    {
-        $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
-        $url = sprintf($url, $pageId, $this->getPageAccessToken());
-        $request = new \stdClass();
-        $request->setting_type = "call_to_actions";
-        $request->thread_state = "new_thread";
-        $call_to_actions = new stdClass();
-        $call_to_actions=>[
-                              ["payload"="first hand shake"]
-            ];
-        $request->call_to_actions = $call_to_actions;
-        $response = self::executePost($url, $request, true);
-        if ($response) {
-            $responseObject = json_decode($response);
-            return is_object($responseObject) && isset($responseObject->result) && strpos($responseObject->result, 'Success') !== false;
-        }
-        return false;
-    }
     public function setWelcomeMessage($pageId, $text)
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
