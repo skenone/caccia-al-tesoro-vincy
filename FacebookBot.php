@@ -145,13 +145,12 @@ class FacebookBot
                 "type"=>"web_url",
                 "url"=>"http://www.google.it/",
                 "title"=>"Regolamento",
-				"webview_height_ratio": "full" 
+		"webview_height_ratio":"full" 
               ]            
             ]
           ]
         ]
-      ]
-    ;
+      ];
   
         $parameters = ['recipient' => $recipient, 'message' => $message];    
         $response = self::executePost($url, $parameters, true);
