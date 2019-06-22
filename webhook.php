@@ -30,8 +30,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->postback=="FirstHandShake")
 	{
-		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
-		$bot->sendTextMessage($recipientId, "Regolamento");
+		$bot->sendsendRegolamento($recipientId);
 	}
 	elseif($message->text)
 	{
