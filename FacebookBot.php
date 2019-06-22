@@ -86,7 +86,7 @@ class FacebookBot
         }
         return false;
     }
-    public function sendLinkMessage($recipientId, $url)
+    public function sendLinkMessage($recipientId,$nameButton,$url)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
@@ -99,15 +99,15 @@ class FacebookBot
         "template_type"=>"generic",
         "elements"=>[
           [
-            "title"=>"Welcome to Peter\'s Hats",
+            "title"=>$nameButton,
             "item_url"=>"https://www.google.it/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"We\'ve got the right hat for everyone.",
+            "subtitle"=>$nameButton,
             "buttons"=>[
               [
                 "type"=>"web_url",
                 "url"=>"https://www.google.it/",
-                "title"=>"View Website"
+                "title"=>$nameButton
               ]/*,
               [
                 "type"=>"postback",
