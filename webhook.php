@@ -1,4 +1,3 @@
-
 <?php
 require_once 'config.php';
 require_once 'FacebookBot.php';
@@ -39,4 +38,3 @@ foreach ($messages as $message)
 		$bot->sendTextMessage($recipientId, $message->text);
 	}
 }
-
