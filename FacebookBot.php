@@ -86,7 +86,7 @@ class FacebookBot
         }
         return false;
     }
-    public function sendLinkMessage($recipientId,$nameButton,$url)
+    public function sendLinkMessage($recipientId, $url)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
@@ -107,7 +107,7 @@ class FacebookBot
               [
                 "type"=>"web_url",
                 "url"=>"https://www.google.it/",
-                "title"=> "title"
+                "title"=>"title"
               ]/*,
               [
                 "type"=>"postback",
