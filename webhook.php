@@ -5,8 +5,7 @@ require_once 'FacebookBot.php';
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 $bot->run();
 $messages = $bot->getReceivedMessages();
-$content = file_get_contents("php://input");
-$bot->sendTextMessage($message->senderId,$content);
+
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
