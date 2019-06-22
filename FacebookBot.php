@@ -99,15 +99,15 @@ class FacebookBot
         "template_type"=>"generic",
         "elements"=>[
           [
-            "title"=>$nameButton,
+            "title"=>"titolo",
             "item_url"=>"https://www.google.it/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>$nameButton,
+            "subtitle"=>"subtitle",
             "buttons"=>[
               [
                 "type"=>"web_url",
                 "url"=>"https://www.google.it/",
-                "title"=>$nameButton
+                "title"=> "title"
               ]/*,
               [
                 "type"=>"postback",
