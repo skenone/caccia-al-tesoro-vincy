@@ -31,7 +31,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->text)
 	{
-		$bot->sendTextMessage($recipientId, $message->postback);
+		$bot->sendTextMessage($recipientId, $message->text);
 	}
 }
 
