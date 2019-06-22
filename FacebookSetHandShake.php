@@ -40,7 +40,7 @@ class HandShake
       
       "payload"=>"First_Hand_shake"
     ]];
-        echo son_encode($answer);
+        echo json_encode($answer);
         $parameters = $answer;    
         $response = self::executePost($url, $request, true);
         if ($response) {
