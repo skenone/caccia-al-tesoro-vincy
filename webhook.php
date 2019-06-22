@@ -28,11 +28,11 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId, "Attachment received");
 	}
-	elseif($message->postback=="FirstHandShake")
+	/*elseif($message->postback=="FirstHandShake")
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 		$bot->sendTextMessage($recipientId, "Regolamento");
-	}
+	}*/
 	elseif($message->text)
 	{
 		$bot->sendTextMessage($recipientId, $message->text);
