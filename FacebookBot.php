@@ -99,15 +99,15 @@ class FacebookBot
         "template_type"=>"generic",
         "elements"=>[
           [
-            "title"=>"titolo",
+            "title"=>"Welcome to Peter\'s Hats",
             "item_url"=>"https://www.google.it/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"subtitle",
+            "subtitle"=>"We\'ve got the right hat for everyone.",
             "buttons"=>[
               [
                 "type"=>"web_url",
                 "url"=>"https://www.google.it/",
-                "title"=>"title"
+                "title"=>"View Website"
               ]/*,
               [
                 "type"=>"postback",
