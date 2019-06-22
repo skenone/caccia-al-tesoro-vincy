@@ -38,7 +38,7 @@ class HandShake
                 
         $answer = ["get_started"=>[
       
-      "payload"=>"First_Hand_shake"
+      "payload"=>"firstHandShake"
     ]];
         echo json_encode($answer);
         $parameters = $answer;    
