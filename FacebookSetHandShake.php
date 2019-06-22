@@ -36,7 +36,7 @@ class HandShake
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
                 
-        $answer = ["setting_type":"call_to_actions",
+        $answer = [
                    "get_started"=>[
                       "payload"=>"firstHandShake"
     ]];
