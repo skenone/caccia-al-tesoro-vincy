@@ -31,57 +31,17 @@ class HandShake
         }
     }
     
-    public function sendLinkMessage($recipientId, $url)
-    {
-        $url = self::BASE_URL . "me/messages?access_token=%s";
-        $url = sprintf($url, $this->getPageAccessToken());
-        $recipient = new \stdClass();
-        $recipient->id = $recipientId;
-        
-        $answer = ["attachment"=>[
-      "type"=>"template",
-      "payload"=>[
-        "template_type"=>"generic",
-        "elements"=>[
-          [
-            "title"=>"Welcome to Peter\'s Hats",
-            "item_url"=>"https://www.google.it/",
-            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"We\'ve got the right hat for everyone.",
-            "buttons"=>[
-              [
-                "type"=>"web_url",
-                "url"=>"https://www.google.it/",
-                "title"=>"View Website"
-              ]/*,
-              [
-                "type"=>"postback",
-                "title"=>"Start Chatting",
-                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
-              ]  */            
-            ]
-          ]
-        ]
-      ]
-    ]];
-        $message= $answer;
-        $parameters = ['recipient' => $recipient, 'message' => $message];    
-        $response = self::executePost($url, $parameters, true);
-        if ($response) {
-            $responseObject = json_decode($response);
-            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
-        }
-        return false;
-    }
-    public function setWelcomeMessage($pageId, $text)
+    public function setFirstHandShakeMessage($pageId)
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
         $url = sprintf($url, $pageId, $this->getPageAccessToken());
-        $request = new \stdClass();
-        $request->setting_type = "greeting";
-        $greeting = new stdClass();
-        $greeting->text = $text;
-        $request->greeting = $greeting;
+                
+        $answer = ["get_started"=>[
+      
+      "payload"=>"First_Hand_shake"
+    ]];
+        
+        $parameters = $answer;    
         $response = self::executePost($url, $request, true);
         if ($response) {
             $responseObject = json_decode($response);
@@ -89,6 +49,7 @@ class HandShake
         }
         return false;
     }
+    
     public function run()
     {
         $request = self::getJsonRequest();
