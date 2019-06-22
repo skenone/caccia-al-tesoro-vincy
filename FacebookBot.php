@@ -135,31 +135,24 @@ class FacebookBot
         $recipient = new \stdClass();
         $recipient->id = $recipientId;
         
-        $answer = ["attachment"=>[
+        $message = ["attachment"=>[
       "type"=>"template",
       "payload"=>[
-        "template_type"=>"generic",
-        "elements"=>[
-          [
-            "title"=>"Benvenuto",
-            "item_url"=>"http://www.google.it/",
-            /*"image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",*/
-            "subtitle"=>"Benvenuto alla pagina Veni Vidi Vincy. La pagina ufficiale de La Notte del Tesoro.
-
-La Grande Caccia al Tesoro di Vincenzo Martino.
-Clicca il pulsante e leggi il regolamento ufficiale de #lanottedeltesoro 2019.",
-            "buttons"=>[
+        "template_type"=>"button",
+		"text":"Benvenuto alla pagina Veni Vidi Vincy. La pagina ufficiale de La Notte del Tesoro. La Grande Caccia al Tesoro di Vincenzo Martino. Clicca il pulsante e leggi il regolamento ufficiale de #lanottedeltesoro 2019.",
+       "buttons"=>[
               [
                 "type"=>"web_url",
                 "url"=>"http://www.google.it/",
-                "title"=>"Regolamento"
+                "title"=>"Regolamento",
+				"webview_height_ratio": "full" 
               ]            
             ]
           ]
         ]
       ]
-    ]];
-        $message= $answer;
+    ;
+  
         $parameters = ['recipient' => $recipient, 'message' => $message];    
         $response = self::executePost($url, $parameters, true);
         if ($response) {
