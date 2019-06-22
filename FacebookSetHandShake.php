@@ -44,6 +44,7 @@ class HandShake
         $parameters = $answer;    
         $response = self::executePost($url, $request, true);
         if ($response) {
+            echo $response;
             $responseObject = json_decode($response);
             return is_object($responseObject) && isset($responseObject->result) && strpos($responseObject->result, 'Success') !== false;
         }
