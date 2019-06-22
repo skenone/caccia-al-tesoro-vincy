@@ -100,13 +100,13 @@ class FacebookBot
         "elements"=>[
           [
             "title"=>"Welcome to Peter\'s Hats",
-            "item_url"=>$url,
+            "item_url"=>"http://www.google.it/",
             "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
             "subtitle"=>"We\'ve got the right hat for everyone.",
             "buttons"=>[
               [
                 "type"=>"web_url",
-                "url"=>$url,
+                "url"=>"http://www.google.it/",
                 "title"=>"View Website"
               ]/*,
               [
