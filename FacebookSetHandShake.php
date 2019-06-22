@@ -40,7 +40,7 @@ class HandShake
       
       "payload"=>"First_Hand_shake"
     ]];
-        echo $answer;
+        echo implode(",",$answer);
         $parameters = $answer;    
         $response = self::executePost($url, $request, true);
         if ($response) {
