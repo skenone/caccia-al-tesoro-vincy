@@ -158,7 +158,7 @@ class FacebookBot
                 $message = new \stdClass();
                 $message->entryId = isset($entry->id) ? $entry->id : null;
                 $message->senderId = isset($messaging->sender->id) ? $messaging->sender->id : null;
-				$message->postback = isset($messaging->postback->payload) ? $$messaging->postback->payload : null;
+		$message->postback = isset($messaging->postback->payload) ? $messaging->postback->payload : null;
                 $message->recipientId = isset($messaging->recipient->id) ? $messaging->recipient->id : null;
                 $message->timestamp = isset($messaging->timestamp) ? $messaging->timestamp : null;
                 $message->messageId = isset($messaging->message->mid) ? $messaging->message->mid : null;
