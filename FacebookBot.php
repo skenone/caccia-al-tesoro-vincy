@@ -167,6 +167,39 @@ Clicca il pulsante e leggi il regolamento ufficiale de #lanottedeltesoro 2019.",
         }
         return false;
     }
+	public function sendRegolamento2($recipientId)
+    {
+        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = sprintf($url, $this->getPageAccessToken());
+        $recipient = new \stdClass();
+        $recipient->id = $recipientId;
+        
+        $message = [
+					"attachment"=>[
+									"type"=>"template",
+									"payload"=>[
+												"template_type"=>"button",
+												"text"=>"Benvenuto alla pagina Veni Vidi Vincy. La pagina ufficiale de La Notte del Tesoro. La Grande Caccia al Tesoro di Vincenzo Martino.Clicca il pulsante e leggi il regolamento ufficiale de #lanottedeltesoro 2019.",
+												"buttons"=>[
+															[
+																"type"=>"web_url",
+																"url"=>"http://www.google.it/",
+																"title"=>"Regolamento"
+															]            
+															]
+												
+												]
+								]
+					];
+        
+        $parameters = ['recipient' => $recipient, 'message' => $message];    
+        $response = self::executePost($url, $parameters, true);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
+        }
+        return false;
+    }
     public function setWelcomeMessage($pageId, $text)
     {
         $url = self::BASE_URL . "%s/thread_settings?access_token=%s";
