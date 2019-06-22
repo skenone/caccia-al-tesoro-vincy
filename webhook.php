@@ -34,7 +34,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->postback=="FirstHandShake")
 	{
-		$bot->sendRegolamento($recipientId);
+		$bot->sendRegolamento2($recipientId);
 	}
 	elseif($message->text)
 	{
