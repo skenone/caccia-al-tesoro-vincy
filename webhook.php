@@ -11,7 +11,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if($message->text=='Link')
 	{
-		$bot->sendLinkMessage($recipientId,"ProvaLink","http://www.google.it/");
+		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}elseif($message->text=='Typing')
 	{
 		$bot->sendTyping($recipientId);
@@ -31,7 +31,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->postback=="FirstHandShake")
 	{
-		$bot->sendLinkMessage($recipientId,"Regolamento", "http://www.google.it/");
+		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 		$bot->sendTextMessage($recipientId, "Regolamento");
 	}
 	elseif($message->text)
