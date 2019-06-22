@@ -156,7 +156,7 @@ class FacebookBot
             if (!$messagingList) continue;
             foreach ($messagingList as $messaging) {
                 $message = new \stdClass();
-		$message->Obj = isset($request->object) ?$request->object : null;
+		$message->request = isset($request) ? $request : null;
                 $message->entryId = isset($entry->id) ? $entry->id : null;
                 $message->senderId = isset($messaging->sender->id) ? $messaging->sender->id : null;
 		$message->postback = isset($messaging->postback->payload) ? $messaging->postback->payload : null;
