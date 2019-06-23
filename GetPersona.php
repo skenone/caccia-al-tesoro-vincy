@@ -11,5 +11,5 @@ $messages = $persona->getReceivedMessages();
 echo $messages->senderId;
 
 $infoPersona = $persona->getInfoPersona('2412308042166290');
-echo "Ciao ". $infoPersona->first_name;
+echo "Ciao ". $infoPersona->first_name . " il tuo gender e\' ". $infoPersona->gender ;
 
