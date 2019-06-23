@@ -10,5 +10,6 @@ $persona->run();
 $messages = $persona->getReceivedMessages();
 echo $messages->senderId;
 
-echo json_encode($persona->get_Persona('2412308042166290'));
+$infoPersona = $persona->get_Persona('2412308042166290');
+echo "Ciao ". $infoPersona->first_name;
 
