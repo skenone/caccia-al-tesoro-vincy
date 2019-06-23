@@ -34,6 +34,7 @@ class Persona
     {
         $url = self::BASE_URL . $recipientId ."?fields=first_name,last_name,profile_pic&access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
+	echo $url;
         $response = self::executeGet($url);
         if ($response) {
             $responseObject = json_decode($response);
