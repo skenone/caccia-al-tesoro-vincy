@@ -7,6 +7,8 @@ echo " Inizio";
 $persona = new Persona(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 echo "persona Inizializzata";
 $persona->run();
+$messages = $persona->getReceivedMessages();
+echo $messages->senderId;
 
-echo $persona->get_Persona($persona->senderId);
+echo $persona->get_Persona($messages->senderId);
 
