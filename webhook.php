@@ -17,7 +17,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->text=='Regolamento')
 	{
-		$bot->sendRegolamento2($recipientId);
+		$bot->sendRegolamento($recipientId);
 	}
 	elseif($message->text=='Image')
 	{
@@ -34,7 +34,7 @@ foreach ($messages as $message)
 	}
 	elseif($message->postback=="FirstHandShake")
 	{
-		$bot->sendRegolamento2($recipientId);
+		$bot->sendRegolamento($recipientId);
 	}
 	elseif($message->text)
 	{
