@@ -10,5 +10,5 @@ $persona->run();
 $messages = $persona->getReceivedMessages();
 echo $messages->senderId;
 
-echo $persona->get_Persona($messages->senderId);
+echo $persona->get_Persona('2412308042166290');
 
