@@ -32,7 +32,7 @@ class Persona
     }
 	public function getInfoPersona($recipientId)
     {
-        $url = self::BASE_URL . $recipientId ."?fields=first_name,last_name,profile_pic&access_token=%s";
+        $url = self::BASE_URL . $recipientId ."?fields=first_name,last_name,profile_pic,gender&access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
 	
         $response = self::executeGet($url);
