@@ -30,7 +30,7 @@ class Persona
             exit;
         }
     }
-	public function get_Persona($recipientId)
+	public function getInfoPersona($recipientId)
     {
         $url = self::BASE_URL . $recipientId ."?fields=first_name,last_name,profile_pic&access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
