@@ -37,11 +37,9 @@ class Persona
 	
         $response = self::executeGet($url);
 	
-        if ($response) {
-            $responseObject = json_decode($response);
-            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
-        }
-        return false;
+           $responseObject = json_decode($response);
+           
+        return $responseObject;
     }
   
     public function run()
