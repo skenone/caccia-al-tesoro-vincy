@@ -1,7 +1,7 @@
 <?php
 class Persona
 {
-    const BASE_URL = 'https://graph.facebook.com/v2.6/';
+    const BASE_URL = 'https://graph.facebook.com/';
     private $_validationToken;
     private $_pageAccessToken;
     private $_receivedMessages;
@@ -30,33 +30,11 @@ class Persona
             exit;
         }
     }
-	public function sendRegolamento($recipientId)
+	public function get_Persona($recipientId)
     {
-        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = self::BASE_URL . $recipientId ."?fields=first_name,last_name,profile_pic&access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
-        $recipient = new \stdClass();
-        $recipient->id = $recipientId;
-        
-        $message = [
-					"attachment"=>[
-									"type"=>"template",
-									"payload"=>[
-												"template_type"=>"button",
-												"text"=>"Benvenuto alla pagina Veni Vidi Vincy. La pagina ufficiale de La Notte del Tesoro. La Grande Caccia al Tesoro di Vincenzo Martino.Clicca il pulsante e leggi il regolamento ufficiale de #lanottedeltesoro 2019.",
-												"buttons"=>[
-															[
-																"type"=>"web_url",
-																"url"=>"http://www.google.it/",
-																"title"=>"Regolamento"
-															]            
-															]
-												
-												]
-								]
-					];
-        
-        $parameters = ['recipient' => $recipient, 'message' => $message];    
-        $response = self::executePost($url, $parameters, true);
+        $response = self::executeGet($url);
         if ($response) {
             $responseObject = json_decode($response);
             return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
@@ -115,6 +93,21 @@ class Persona
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         $response = curl_exec($ch);
         curl_close($ch);
+        return $response;
+    }
+	 private static function executeGet($url)
+    {
+        $curl = curl_init();
+
+curl_setopt_array($curl, [
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => $url,
+    CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+]);
+
+$resp = curl_exec($curl);
+
+curl_close($curl);
         return $response;
     }
 }
