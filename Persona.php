@@ -36,6 +36,7 @@ class Persona
         $url = sprintf($url, $this->getPageAccessToken());
 	echo $url;
         $response = self::executeGet($url);
+		echo $response;
         if ($response) {
             $responseObject = json_decode($response);
             return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
