@@ -19,9 +19,14 @@ foreach ($messages as $message)
 	elseif(strtoupper($message->text)=='INFO')
 	{
 		$bot->sendTextMessage($recipientId,"[🤖] :Di seguito i comandi accettati: 
-		- info : lista dei comandi disponibili
-		- id : restituisce il tuo id
-		- regolamento: mostra il link al regolamento della caccia al tesoro.");
+		- info : lista dei comandi disponibili.
+		- id : restituisce il tuo id.
+		- regolamento: mostra il link al regolamento della caccia al tesoro.
+		- capitano: inizia la procedura di iscrizione alla caccia al tesoso.");
+	}
+	elseif(strtoupper($message->text)=='CAPITANO')
+	{
+		$bot->sendTextMessage($recipientId,"[🤖] :Quindi sarai tu il capitano! E dimmi un po'.. dimmi il nome del team con il comando \"team->NOME_TEAM\"");
 	}
 	elseif(strtoupper($message->text)=='ID')
 	{
