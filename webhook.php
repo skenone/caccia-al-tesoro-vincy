@@ -18,10 +18,10 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
-		$bot->sendTextMessage($recipientId,"🤖 :Di seguito i comandi accettati: \n - info : lista dei comandi disponibili
-											\n - id : restituisce il tuo id
-											\n - regolamento: mostra il link al regolamento della
-											caccia al tesoro.");
+		$bot->sendTextMessage($recipientId,"🤖 :Di seguito i comandi accettati: 
+		- info : lista dei comandi disponibili
+		- id : restituisce il tuo id
+		- regolamento: mostra il link al regolamento della caccia al tesoro.");
 	}
 	elseif(strtoupper($message->text)=='ID')
 	{
