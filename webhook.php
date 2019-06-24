@@ -43,6 +43,8 @@ foreach ($messages as $message)
 	}
 	elseif($message->text)
 	{
+		$bot->sendTyping($recipientId);
+		sleep(5);
 		$bot->sendTextMessage($recipientId, $message->text);
 	}
 }
