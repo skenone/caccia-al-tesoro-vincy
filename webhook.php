@@ -12,6 +12,10 @@ foreach ($messages as $message)
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}
+	elseif(strtoupper($message->text)=='CIAO')
+	{
+		$bot->sendTextMessage($recipientId,"🤖 :Ciao a te! Se hai bisogno di informazioni scrivi \"info\" per sapere che cosa puoi fare");
+	}
 	elseif(strtoupper($message->text)=='ID')
 	{
 		$bot->sendTextMessage($recipientId, $message->senderId);
@@ -45,6 +49,6 @@ foreach ($messages as $message)
 	{
 		$bot->sendTyping($recipientId);
 		sleep(5);
-		$bot->sendTextMessage($recipientId, " 🤔 Non conosco questo comando...Riprova!");
+		$bot->sendTextMessage($recipientId, "🤖Non conosco questo comando...Riprova! 🤔");
 	}
 }
