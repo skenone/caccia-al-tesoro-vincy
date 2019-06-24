@@ -45,6 +45,6 @@ foreach ($messages as $message)
 	{
 		$bot->sendTyping($recipientId);
 		sleep(3);
-		$bot->sendTextMessage($recipientId, "\ud83e\udd14");
+		$bot->sendTextMessage($recipientId, "🤔");
 	}
 }
