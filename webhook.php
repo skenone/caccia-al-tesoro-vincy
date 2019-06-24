@@ -16,6 +16,13 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId,"🤖 :Ciao a te! Se hai bisogno di informazioni scrivi \"info\" per sapere che cosa puoi fare");
 	}
+	elseif(strtoupper($message->text)=='INFO')
+	{
+		$bot->sendTextMessage($recipientId,"🤖 :Di seguito i comandi accettati: \n - info : lista dei comandi disponibili
+											\n - id : restituisce il tuo id
+											\n - regolamento: mostra il link al regolamento della
+											caccia al tesoro.");
+	}
 	elseif(strtoupper($message->text)=='ID')
 	{
 		$bot->sendTextMessage($recipientId, $message->senderId);
