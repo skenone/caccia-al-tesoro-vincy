@@ -18,7 +18,7 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
-		$bot->sendTextMessage($recipientId,"[🤖] :Di seguito i comandi accettati: 
+		$bot->sendTextMessage($recipientId,"[🤖] :ℹ Di seguito i comandi accettati: 
 		- info : lista dei comandi disponibili.
 		- id : restituisce il tuo id.
 		- regolamento: mostra il link al regolamento della caccia al tesoro.
@@ -62,7 +62,7 @@ foreach ($messages as $message)
 	{
 		$bot->sendTyping($recipientId);
 		sleep(5);
-		$bot->sendTextMessage($recipientId, "[🤖] : Non conosco questo comando...Riprova! 🤔
+		$bot->sendTextMessage($recipientId, "[🤖] : ⚠ Non conosco questo comando... Riprova! 
 Se hai bisogno di informazioni scrivi \"info\"");
 	}
 }
