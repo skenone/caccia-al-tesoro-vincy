@@ -5,11 +5,9 @@ class InterfacciaDatabase
     private $_validationToken;
     private $_pageAccessToken;
     private $_receivedMessages;
-    public function __construct($validationToken, $pageAccessToken)
+    public function __construct()
     {
-        $this->_validationToken = $validationToken;
-        $this->_pageAccessToken = $pageAccessToken;
-        $this->setupWebhook();
+       
     }
     public function getBASE_URL()
     {
