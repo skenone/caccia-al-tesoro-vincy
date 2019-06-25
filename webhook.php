@@ -16,6 +16,12 @@ foreach ($messages as $message)
 	{
 		$bot->sendTextMessage($recipientId,"[🤖] :Ciao a te! Se hai bisogno di informazioni scrivi \"info\" per sapere che cosa puoi fare");
 	}
+	elseif(strtoupper($message->text)=='ISCRIVI')
+	{
+		$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi il nome della squadra e tra parentesi tonde i componenti. 
+			esempio : ");
+		$bot->sendTextMessage($recipientId,"TeamROBOT(robot1,robot2,robot3,robot4,robot5)");
+	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
 		$bot->sendTextMessage($recipientId,"[🤖] :ℹ Di seguito i comandi accettati: 
