@@ -1,6 +1,8 @@
 <?php
 require_once 'config.php';
 require_once 'FacebookBot.php';
+require_once 'InterfacciaDatabase.php';
+$InterDB= new InterfacciaDatabase();
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 $bot->run();
 $messages = $bot->getReceivedMessages();
@@ -18,10 +20,8 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-			$url = "http://skenone.altervista.org/CacciaAlTesoro/isSubscriber.php?ID_CAPITANO=%s";
-        		$url = sprintf($url,$recipientId);
-        		$response = file_get_contents($url);
-			if($response==0){
+			
+			if($InterDB->isSubscriber==0){
 			$bot->sendTextMessage($recipientId,"$homepage");
 			$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi in un unico messaggio il nome della squadra seguito da # e  i componenti (NomeTeam#ListaComponentiTeam). 
 			esempio : ");
