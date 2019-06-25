@@ -16,9 +16,11 @@ class InterfacciaDatabase
         return $this->BASE_URL;
     }
    
-    public function publicMethod()
+    public function isSubscriber($id)
     {
-        return true;
+        $url = BASE_URL."isSubscriber.php?ID_CAPITANO=%s";
+        $url = sprintf($url,$recipientId);
+        return file_get_contents($url);
     }
    
     
