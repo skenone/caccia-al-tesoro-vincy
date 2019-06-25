@@ -18,9 +18,9 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-		$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi il nome della squadra e tra parentesi tonde i componenti. 
+		$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi in un unico messaggio il nome della squadra seguito da # e  i componenti. 
 			esempio : ");
-		$bot->sendTextMessage($recipientId,"TeamROBOT(robot1,robot2,robot3,robot4,robot5)");
+		$bot->sendTextMessage($recipientId,"NomeTeam # ListaComponentiTeam");
 	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
