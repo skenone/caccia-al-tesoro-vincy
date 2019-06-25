@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 require_once 'FacebookBot.php';
-require_once 'myFunction.php';
 $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 $bot->run();
 $messages = $bot->getReceivedMessages();
@@ -19,13 +18,11 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-		if(controllaIscrizione($recipientId)==0){
+		
 			$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi in un unico messaggio il nome della squadra seguito da # e  i componenti (NomeTeam#ListaComponentiTeam). 
 			esempio : ");
 			$bot->sendTextMessage($recipientId,"SquadraDisney#Topolino,Pluto,Pippo,Paperino");
-			}
-		else
-			$bot->sendTextMessage($recipientId,"Sei già iscritto!");
+		
 	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
