@@ -18,7 +18,8 @@ class InterfacciaDatabase
     {
         $url = BASE_URL."isSubscriber.php?ID_CAPITANO=%s";
         $url = sprintf($url,$id);
-        return file_get_contents($url);
+        return $url;
+        //return file_get_contents($url);
     }
    
     
