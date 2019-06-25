@@ -1,7 +1,7 @@
 <?php
 class InterfacciaDatabase
 {
-    const BASE_URL = 'https://http://skenone.altervista.org/CacciaAlTesoro/';
+    const BASE_URL = 'http://skenone.altervista.org/CacciaAlTesoro/';
     private $_validationToken;
     private $_pageAccessToken;
     private $_receivedMessages;
