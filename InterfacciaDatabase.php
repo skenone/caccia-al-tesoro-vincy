@@ -16,7 +16,7 @@ class InterfacciaDatabase
    
     public function isSubscriber($id)
     {
-        $url = BASE_URL . "isSubscriber.php?ID_CAPITANO=%s";
+        $url = self::BASE_URL . "isSubscriber.php?ID_CAPITANO=%s";
         $url = sprintf($url,$id);
         return $url;
         //return file_get_contents($url);
