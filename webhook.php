@@ -18,7 +18,10 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-		
+			$url = "http://skenone.altervista.org/CacciaAlTesoro/controllaIscrizione.php?ID_CAPITANO=%s";
+        		$url = sprintf($url,$recipientId);
+        		$homepage = file_get_contents($url);
+			$bot->sendTextMessage($recipientId,"$homepage");
 			$bot->sendTextMessage($recipientId,"[🤖] :Per iscrivere la tua squadra devi scrivermi in un unico messaggio il nome della squadra seguito da # e  i componenti (NomeTeam#ListaComponentiTeam). 
 			esempio : ");
 			$bot->sendTextMessage($recipientId,"SquadraDisney#Topolino,Pluto,Pippo,Paperino");
