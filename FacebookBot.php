@@ -32,29 +32,39 @@ class FacebookBot
     }
 	public function iscriviti($recipientId)
     {
+        
         $url = self::BASE_URL . "me/messages?access_token=%s";
         $url = sprintf($url, $this->getPageAccessToken());
         $recipient = new \stdClass();
         $recipient->id = $recipientId;
         
-        $message = [
-					"attachment"=>[
-									"type"=>"template",
-									"payload"=>[
-												"template_type"=>"button",
-												"text"=>"Iscriviti",
-												"buttons"=>[
-															[
-																"type"=>"web_url",
-																"url"=>"http://www.google.it/",
-																"title"=>"Icriviti"
-															]            
-															]
-												
-												]
-								]
-					];
-        $message->attachment->payload->buttons->url="http://skenone.altervista.org/CacciaAlTesoro/iscrizioneTeam.php?ID_CAPITANO=".$recipientId;
+        $answer = ["attachment"=>[
+      "type"=>"template",
+      "payload"=>[
+        "template_type"=>"generic",
+        "elements"=>[
+          [
+            "title"=>"Welcome to Peter\'s Hats",
+            "item_url"=>"http://www.google.it/",
+            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
+            "subtitle"=>"We\'ve got the right hat for everyone.",
+            "buttons"=>[
+              [
+                "type"=>"web_url",
+                "url"=>"http://skenone.altervista.org/CacciaAlTesoro/iscrizioneTeam.php?ID_CAPITANO=".$recipientId,
+                "title"=>"View Website"
+              ]/*,
+              [
+                "type"=>"postback",
+                "title"=>"Start Chatting",
+                "payload"=>"DEVELOPER_DEFINED_PAYLOAD"
+              ]  */            
+            ]
+          ]
+        ]
+      ]
+    ]];
+        $message= $answer;
         $parameters = ['recipient' => $recipient, 'message' => $message];    
         $response = self::executePost($url, $parameters, true);
         if ($response) {
@@ -62,6 +72,7 @@ class FacebookBot
             return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
         }
         return false;
+   
     }
     public function sendTyping($recipientId)
     {
