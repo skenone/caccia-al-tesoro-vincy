@@ -30,6 +30,39 @@ class FacebookBot
             exit;
         }
     }
+	public function iscriviti($recipientId)
+    {
+        $url = self::BASE_URL . "me/messages?access_token=%s";
+        $url = sprintf($url, $this->getPageAccessToken());
+        $recipient = new \stdClass();
+        $recipient->id = $recipientId;
+        
+        $message = [
+					"attachment"=>[
+									"type"=>"template",
+									"payload"=>[
+												"template_type"=>"button",
+												"text"=>"Iscriviti",
+												"buttons"=>[
+															[
+																"type"=>"web_url",
+																"url"=>"http://www.google.it/",
+																"title"=>"Icriviti"
+															]            
+															]
+												
+												]
+								]
+					];
+        $message->attachment->payload->buttons->url="http://skenone.altervista.org/CacciaAlTesoro/iscrizioneTeam.php?ID_CAPITANO=".$recipientId;
+        $parameters = ['recipient' => $recipient, 'message' => $message];    
+        $response = self::executePost($url, $parameters, true);
+        if ($response) {
+            $responseObject = json_decode($response);
+            return is_object($responseObject) && isset($responseObject->recipient_id) && isset($responseObject->message_id);
+        }
+        return false;
+    }
     public function sendTyping($recipientId)
     {
         $url = self::BASE_URL . "me/messages?access_token=%s";
