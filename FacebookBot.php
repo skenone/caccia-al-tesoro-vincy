@@ -51,7 +51,7 @@ class FacebookBot
             "buttons"=>[
               [
                 "type"=>"web_url",
-                "url"=>"http://skenone.altervista.org/CacciaAlTesoro/iscrizioneTeam.php?ID_CAPITANO=".$recipientId,
+                "url"=>"http://skenone.altervista.org/CacciaAlTesoro/iscrizione.php?IdCapitano=".$recipientId,
                 "title"=>"View Website"
               ]/*,
               [
