@@ -10,7 +10,10 @@ $messages = $bot->getReceivedMessages();
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
-	if(strtoupper($message->text)=='LINK')
+	if(strtoupper($message->text)=='CODE'){
+		json_encode($InterDB->getAiuti("CIAO"));
+	}
+	elseif(strtoupper($message->text)=='LINK')
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}
