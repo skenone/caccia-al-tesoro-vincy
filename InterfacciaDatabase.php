@@ -20,6 +20,12 @@ class InterfacciaDatabase
         $url = sprintf($url,$id);
         return file_get_contents($url);
     }
+    public function getAiuti($code)
+    {
+        $url = self::BASE_URL . "interfaceDatabase/getAiuti.php?code=%s";
+        $url = sprintf($url,$code);
+        return file_get_contents($url);
+    }
    
     
     private static function privateMethod($url, $parameters, $json = false)
