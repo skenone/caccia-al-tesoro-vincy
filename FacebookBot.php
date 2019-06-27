@@ -44,15 +44,15 @@ class FacebookBot
         "template_type"=>"generic",
         "elements"=>[
           [
-            "title"=>"Welcome to Peter\'s Hats",
-            "item_url"=>"http://www.google.it/",
-            "image_url"=>"https://www.cloudways.com/blog/wp-content/uploads/Migrating-Your-Symfony-Website-To-Cloudways-Banner.jpg",
-            "subtitle"=>"We\'ve got the right hat for everyone.",
+            "title"=>"#CacciaAlTesoro2019",
+            "item_url"=>"http://skenone.altervista.org/CacciaAlTesoro/iscrizione.php?IdCapitano=".$recipientId,
+            "image_url"=>"https://www.blogmamma.it/wp-content/uploads/2017/07/indovinelli-caccia-al-tesoro-bambini-e1500889702822.jpg",
+            "subtitle"=>"Iscrivi la tua squadra alla Caccia al Tesoro!",
             "buttons"=>[
               [
                 "type"=>"web_url",
                 "url"=>"http://skenone.altervista.org/CacciaAlTesoro/iscrizione.php?IdCapitano=".$recipientId,
-                "title"=>"View Website"
+                "title"=>"Iscrivimi Ora!"
               ]/*,
               [
                 "type"=>"postback",
