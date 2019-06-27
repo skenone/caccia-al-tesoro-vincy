@@ -20,11 +20,11 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-		$checkIscrizione=$InterDB->isSubscriber($recipientId);
-			if ($checkIscrizione=="")
+		//$checkIscrizione=$InterDB->isSubscriber($recipientId);
+			//if ($checkIscrizione=="")
 			$bot->iscriviti($recipientId);
-			else
-			$bot->sendTextMessage($recipientId,$checkIscrizione);
+			//else
+			//$bot->sendTextMessage($recipientId,$checkIscrizione);
 					
 	}
 	elseif(strtoupper($message->text)=='INFO')
