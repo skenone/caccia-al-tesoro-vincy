@@ -20,7 +20,7 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
-		$checkIscrizione=$InterDB->isSubscriber($recipientId;
+		$checkIscrizione=$InterDB->isSubscriber($recipientId);
 			if ($checkIscrizione=="")
 			$bot->iscriviti($recipientId);
 			else
@@ -35,10 +35,7 @@ foreach ($messages as $message)
 		- regolamento: mostra il link al regolamento della caccia al tesoro.
 		");
 	}
-	/*elseif(strtoupper($message->text)=='CAPITANO')
-	{
-		$bot->sendTextMessage($recipientId,"[🤖] :Quindi sarai tu il capitano! E dimmi un po'.. dimmi il nome del team con il comando \"team->NOME_TEAM\"");
-	}*/
+	
 	elseif(strtoupper($message->text)=='ID')
 	{
 		$bot->sendTextMessage($recipientId, $message->senderId);
