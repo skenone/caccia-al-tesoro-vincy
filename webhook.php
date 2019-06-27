@@ -16,7 +16,7 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='CIAO')
 	{
-		$bot->sendTextMessage($recipientId,"[🤖] :Ciao a te! Se hai bisogno di informazioni scrivi \"info\" per sapere che cosa puoi fare");
+		$bot->sendTextMessage($recipientId,"Ciao a te! Se hai bisogno di informazioni scrivi \"info\"");
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
@@ -29,16 +29,12 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='INFO')
 	{
-		$bot->sendTextMessage($recipientId,"[🤖] :ℹ Di seguito i comandi accettati: 
+		$bot->sendTextMessage($recipientId,"ℹ Di seguito i comandi accettati: 
+		- iscrivi : link per l'iscrizione alla Caccia al tesoro
 		- info : lista dei comandi disponibili.
-		- id : restituisce il tuo id.
 		- regolamento: mostra il link al regolamento della caccia al tesoro.
 		");
 	}
-	/*elseif(strtoupper($message->text)=='CAPITANO')
-	{
-		$bot->sendTextMessage($recipientId,"[🤖] :Quindi sarai tu il capitano! E dimmi un po'.. dimmi il nome del team con il comando \"team->NOME_TEAM\"");
-	}*/
 	elseif(strtoupper($message->text)=='ID')
 	{
 		$bot->sendTextMessage($recipientId, $message->senderId);
@@ -73,7 +69,6 @@ foreach ($messages as $message)
 	{
 		$bot->sendTyping($recipientId);
 		sleep(5);
-		$bot->sendTextMessage($recipientId, "[🤖] : ⚠ Non conosco questo comando... Riprova! 
-Se hai bisogno di informazioni scrivi \"info\"");
+		$bot->sendTextMessage($recipientId, " ⚠ Non conosco questo comando...");
 	}
 }
