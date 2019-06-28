@@ -10,30 +10,21 @@ $messages = $bot->getReceivedMessages();
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
-	/*if(strtoupper($message->text)=='CODE'){
+	if(strtoupper($message->text)=='CODE'){
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
 		$bot->sendTextMessage($recipientId,"Ciao1");
+		$bot->sendTextMessage($recipientId,date('h:i:s'));
 		sleep(10);
-		$bot->sendTextMessage($recipientId,"Ciao2");
-		sleep(10);
-		$bot->sendTextMessage($recipientId,"Ciao3");
-		sleep(10);
-		$bot->sendTextMessage($recipientId,"Ciao4");
-		sleep(10);
-		$bot->sendTextMessage($recipientId,"Ciao5");
-		sleep(10);
-		$bot->sendTextMessage($recipientId,"Ciao6");
-		
+		$bot->sendTextMessage($recipientId,date('h:i:s'));
 	}
-	else*/
-	if(strtoupper($message->text)=='LINK')
+	elseif(strtoupper($message->text)=='LINK')
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}
 	elseif(strtoupper($message->text)=='CIAO')
 	{
-		$respCiao=$bot->sendTextMessage($recipientId,"Ciao a te! Se hai bisogno di informazioni scrivi \"info\"");
-		$bot->sendTextMessage($recipientId,$respCiao);
+		$bot->sendTextMessage($recipientId,"Ciao a te! Se hai bisogno di informazioni scrivi \"info\"");
+		
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
