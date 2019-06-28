@@ -10,7 +10,7 @@ $messages = $bot->getReceivedMessages();
 foreach ($messages as $message)
 {
 	$recipientId = $message->senderId;
-	if(strtoupper($message->text)=='CODE'){
+	/*if(strtoupper($message->text)=='CODE'){
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
 		$bot->sendTextMessage($recipientId,"Ciao1");
 		sleep(10);
@@ -25,7 +25,8 @@ foreach ($messages as $message)
 		$bot->sendTextMessage($recipientId,"Ciao6");
 		
 	}
-	elseif(strtoupper($message->text)=='LINK')
+	else*/
+	if(strtoupper($message->text)=='LINK')
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
 	}
