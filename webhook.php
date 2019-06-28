@@ -32,7 +32,8 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='CIAO')
 	{
-		$bot->sendTextMessage($recipientId,"Ciao a te! Se hai bisogno di informazioni scrivi \"info\"");
+		$respCiao=$bot->sendTextMessage($recipientId,"Ciao a te! Se hai bisogno di informazioni scrivi \"info\"");
+		$bot->sendTextMessage($recipientId,$respCiao);
 	}
 	elseif(strtoupper($message->text)=='ISCRIVI')
 	{
