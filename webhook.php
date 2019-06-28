@@ -16,6 +16,7 @@ foreach ($messages as $message)
 		$bot->sendTextMessage($recipientId,"Ciao1");
 		$i=3;
 		while($i>0){
+			sleep(5);
 			$bot->sendTextMessage($recipientId,$i);
 			$i--;
 		}
