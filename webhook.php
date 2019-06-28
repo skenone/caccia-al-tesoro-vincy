@@ -12,10 +12,10 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if(strtoupper($message->text)=='CODE'){
 		$aiuti=json_decode($InterDB->getAiuti("CIAO"));
-		/*$bot->sendTextMessage($recipientId,$aiuti['a1']);
 		$bot->sendTextMessage($recipientId,$aiuti->a1);
 		sleep(60);
 		$bot->sendTextMessage($recipientId,$aiuti->a2);
+		/*
 		sleep(60);
 		$bot->sendTextMessage($recipientId,$aiuti->a3);
 		sleep(60);
