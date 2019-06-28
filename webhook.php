@@ -14,6 +14,12 @@ foreach ($messages as $message)
 	if(strtoupper($message->text)=='CODE'){
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
 		$bot->sendTextMessage($recipientId,"Ciao1");
+		$i=3;
+		while(sleep(5) and $i>0){
+			$bot->sendTextMessage($recipientId,$);
+			$i--;
+		}
+		
 		
 	}
 	elseif(strtoupper($message->text)=='LINK')
