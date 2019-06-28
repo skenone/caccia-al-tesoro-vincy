@@ -12,7 +12,7 @@ foreach ($messages as $message)
 
 	$recipientId = $message->senderId;
 	if(strtoupper($message->text)=='CODE'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CIAO")));
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CIAO"));
 		
 		
 	}
