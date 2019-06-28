@@ -7,14 +7,13 @@ $bot = new FacebookBot(FACEBOOK_VALIDATION_TOKEN, FACEBOOK_PAGE_ACCESS_TOKEN);
 $bot->run();
 $messages = $bot->getReceivedMessages();
 /*$bot->sendTextMessage($messages[0]->senderId, json_encode($messages[0]));*/
-//foreach ($messages as $message)
-//{
-$message =$messages[0];
+foreach ($messages as $message)
+{
+
 	$recipientId = $message->senderId;
 	if(strtoupper($message->text)=='CODE'){
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
 		$bot->sendTextMessage($recipientId,"Ciao1");
-		sleep(30);
 		
 	}
 	elseif(strtoupper($message->text)=='LINK')
@@ -79,4 +78,4 @@ $message =$messages[0];
 		sleep(5);
 		$bot->sendTextMessage($recipientId, " ⚠ Non conosco questo comando...");
 	}
-//}
+}
