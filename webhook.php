@@ -13,11 +13,7 @@ foreach ($messages as $message)
 	$recipientId = $message->senderId;
 	if(strtoupper($message->text)=='CODE'){
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
-		$bot->sendTextMessage($recipientId,"Ciao1");
-		sleep(5);
-		sleep(5);
-		sleep(5);
-		$bot->sendTextMessage($recipientId,"fine");
+		
 		
 	}
 	elseif(strtoupper($message->text)=='LINK')
