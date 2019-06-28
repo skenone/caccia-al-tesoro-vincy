@@ -20,10 +20,10 @@ class InterfacciaDatabase
         $url = sprintf($url,$id);
         return file_get_contents($url);
     }
-    public function getAiuti($code)
+    public function getAiuti($id,$code)
     {
-        $url = self::BASE_URL . "interfaceDatabase/getAiuti.php?code=%s";
-        $url = sprintf($url,$code);
+        $url = self::BASE_URL . "interfaceDatabase/getAiuti.php?id_cap=%s&code=%s";
+        $url = sprintf($url,$id,$code);
         return file_get_contents($url);
     }
    
