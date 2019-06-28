@@ -11,8 +11,13 @@ foreach ($messages as $message)
 {
 
 	$recipientId = $message->senderId;
-	if(strtoupper($message->text)=='CODE'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CODE"));
+	if(strtoupper($message->text)=='CODE1'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CODE1"));
+		
+		
+	}
+	elseif(strtoupper($message->text)=='CODE2'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CODE2"));
 		
 		
 	}
