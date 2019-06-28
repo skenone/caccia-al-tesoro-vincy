@@ -15,7 +15,7 @@ foreach ($messages as $message)
 		//$aiuti=json_decode($InterDB->getAiuti("CIAO"));
 		$bot->sendTextMessage($recipientId,"Ciao1");
 		$i=3;
-		while(sleep(5) and $i>0){
+		while($i>0){
 			$bot->sendTextMessage($recipientId,$i);
 			$i--;
 		}
