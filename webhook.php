@@ -81,6 +81,6 @@ foreach ($messages as $message)
 	{
 		$bot->sendTyping($recipientId);
 		sleep(5);
-		$bot->sendTextMessage($recipientId, " ⚠ Non conosco questo comando...");
+		$bot->sendTextMessage($recipientId, " ⚠ Non conosco questo comando...Se hai bisogno di informazioni scrivi \"info\"");
 	}
 }
