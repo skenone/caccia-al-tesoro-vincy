@@ -21,6 +21,9 @@ foreach ($messages as $message)
 		
 		
 	}
+	elseif(strtoupper($message->text)=='DELTESORO'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DELTESORO"));		
+	}
 	elseif(strtoupper($message->text)=='LINK')
 	{
 		$bot->sendLinkMessage($recipientId, "http://www.google.it/");
