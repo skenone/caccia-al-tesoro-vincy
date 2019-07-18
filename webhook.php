@@ -22,7 +22,7 @@ foreach ($messages as $message)
 		
 	}
 	elseif(strtoupper($message->text)=='DESTRA'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CODE2"));
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DESTRA"));
 		
 		
 	}
