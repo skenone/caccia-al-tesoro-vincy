@@ -21,6 +21,11 @@ foreach ($messages as $message)
 		
 		
 	}
+	elseif(strtoupper($message->text)=='DESTRA'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"CODE2"));
+		
+		
+	}
 	elseif(strtoupper($message->text)=='DELTESORO'){
 		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DELTESORO"));		
 	}
