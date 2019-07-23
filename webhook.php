@@ -23,11 +23,21 @@ foreach ($messages as $message)
 	}
 	elseif(strtoupper($message->text)=='DESTRA'){
 		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DESTRA"));
-		
-		
 	}
 	elseif(strtoupper($message->text)=='DELTESORO'){
 		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DELTESORO"));		
+	}
+	elseif(strtoupper($message->text)=='ILBAULE'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"ILBAULE"));		
+	}
+	elseif(strtoupper($message->text)=='LACHIAVE'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"LACHIAVE"));		
+	}
+	elseif(strtoupper($message->text)=='DIVINCY'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DIVINCY"));		
+	}
+	elseif(strtoupper($message->text)=='STANELLATASCA'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"STANELLATASCA"));		
 	}
 	elseif(strtoupper($message->text)=='LINK')
 	{
