@@ -188,7 +188,7 @@ class FacebookBot
 												"buttons"=>[
 															[
 																"type"=>"web_url",
-																"url"=>"https://www.facebook.com/notes/veni-vidi-vincy/regolamento-la-notte-del-tesoro-2019-26-luglio-2019/2542545305777294/",
+																"url"=>"https://www.facebook.com/notes/veni-vidi-vincy/regolamento-la-notte-del-tesoro-napoli-nord-11-ottobre-2019/",
 																"title"=>"Regolamento"
 															]            
 															]
