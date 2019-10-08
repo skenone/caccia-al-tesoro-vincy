@@ -21,26 +21,26 @@ foreach ($messages as $message)
 		
 		
 	}
-	elseif(strtoupper($message->text)=='PERAPRIRE'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"PERAPRIRE"));
+	elseif(strtoupper($message->text)=='DIMORIR'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DIMORIR"));
 	}
-	elseif(strtoupper($message->text)=='DESTRA'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DESTRA"));
+	elseif(strtoupper($message->text)=='PUNTOD'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"PUNTOD"));
 	}
-	elseif(strtoupper($message->text)=='DELTESORO'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DELTESORO"));		
+	elseif(strtoupper($message->text)=='MANDAMAIL'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"MANDAMAIL"));		
 	}
-	elseif(strtoupper($message->text)=='ILBAULE'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"ILBAULE"));		
+	elseif(strtoupper($message->text)=='PUNTOSUD'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"PUNTOSUD"));		
 	}
-	elseif(strtoupper($message->text)=='LACHIAVE'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"LACHIAVE"));		
+	elseif(strtoupper($message->text)=='PUNTOALTO'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"PUNTOALTO"));		
 	}
-	elseif(strtoupper($message->text)=='DIVINCY'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"DIVINCY"));		
+	elseif(strtoupper($message->text)=='SFILABAR'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"SFILABAR"));		
 	}
-	elseif(strtoupper($message->text)=='STANELLATASCA'){
-		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"STANELLATASCA"));		
+	elseif(strtoupper($message->text)=='PUNTOSX'){
+		$bot->sendTextMessage($recipientId,$InterDB->getAiuti($recipientId,"PUNTOSX"));		
 	}
 	elseif(strtoupper($message->text)=='LINK')
 	{
